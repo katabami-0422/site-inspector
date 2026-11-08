@@ -4,6 +4,14 @@
   "type": "module",
   "description": "Click a UI element in your local dev site and hand it to your AI coding agent over MCP.",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/katabami-0422/site-inspector.git"
+  },
+  "homepage": "https://github.com/katabami-0422/site-inspector#readme",
+  "bugs": {
+    "url": "https://github.com/katabami-0422/site-inspector/issues"
+  },
   "keywords": [
     "mcp",
     "model-context-protocol",

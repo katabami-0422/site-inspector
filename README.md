@@ -21,7 +21,7 @@ Chrome 拡張の Service Worker ──HTTP (127.0.0.1:3847)──▶ ローカ�
 
 ## 30 秒でつなぐ
 
-1. **拡張を入れる** — GitHub の Releases にある `site-inspector-extension-v*.zip` を展開し、`chrome://extensions` → デベロッパーモード → 「パッケージ化されていない拡張機能を読み込む」でそのフォルダを選ぶ
+1. **拡張を入れる** — [Releases](https://github.com/katabami-0422/site-inspector/releases) の `site-inspector-extension-v*.zip` を展開し、`chrome://extensions` → デベロッパーモード → 「パッケージ化されていない拡張機能を読み込む」でそのフォルダを選ぶ
 2. **エージェントに 1 行で登録**（例: Claude Code）
 
    ```bash
@@ -34,7 +34,7 @@ Chrome 拡張の Service Worker ──HTTP (127.0.0.1:3847)──▶ ローカ�
 
 ## インストール
 
-> npm 未公開のあいだは `npx site-inspector` の代わりに、チェックアウトしたリポジトリで `node src/host/cli.ts ...` を実行してください（引数は同じです）。
+> チェックアウトから使う場合も引数は同じです。`npm install && npm run build` のあと、`npx site-inspector` の代わりに `node src/host/cli.ts ...` を実行してください。
 
 ### 1. Chrome 拡張
 
