@@ -8,6 +8,9 @@ permissions:
   contents: write
   id-token: write
 
+env:
+  NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+
 jobs:
   release:
     runs-on: ubuntu-latest
@@ -47,7 +50,7 @@ jobs:
           GH_TOKEN: ${{ github.token }}
 
       - name: Publish to npm
-        if: ${{ secrets.NPM_TOKEN != '' }}
+        if: ${{ env.NPM_TOKEN != '' }}
         run: npm publish --provenance --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
