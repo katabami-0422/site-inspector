@@ -1,0 +1,59 @@
+{
+  "name": "site-inspector",
+  "version": "0.2.0",
+  "type": "module",
+  "description": "Click a UI element in your local dev site and hand it to your AI coding agent over MCP.",
+  "license": "MIT",
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "chrome-extension",
+    "ai-coding-agent",
+    "localhost"
+  ],
+  "engines": {
+    "node": ">=22.18"
+  },
+  "bin": {
+    "site-inspector": "dist/host/cli.js"
+  },
+  "files": [
+    "dist/host",
+    "dist/shared",
+    "dist/extension",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "start": "node src/host/cli.ts start",
+    "mcp": "node src/host/cli.ts mcp",
+    "init": "node src/host/cli.ts init",
+    "status": "node src/host/cli.ts status",
+    "typecheck": "tsc --noEmit",
+    "test": "node --test --test-reporter=spec test/*.test.ts",
+    "build": "npm run build:host && npm run build:ext",
+    "build:host": "tsc -p tsconfig.build.json",
+    "build:ext": "node scripts/build-extension.mjs",
+    "build:ext:test": "node scripts/build-extension.mjs --all-urls",
+    "e2e": "node scripts/e2e.mjs",
+    "dev:ext": "node scripts/build-extension.mjs --watch",
+    "dev:ui": "vite --config vite.dev.config.ts",
+    "sample": "npm --prefix sample-app run dev",
+    "prepublishOnly": "npm run typecheck && npm test && npm run build"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.32.2",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@types/chrome": "^0.3.7",
+    "@types/node": "^24.10.0",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.2.0",
+    "@vitejs/plugin-react": "^6.2.1",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0",
+    "typescript": "^5.9.0",
+    "vite": "^8.3.5"
+  }
+}

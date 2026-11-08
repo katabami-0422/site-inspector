@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "Site Inspector",
+  "version": "0.2.0",
+  "minimum_chrome_version": "123",
+  "description": "Click an element on your local dev site and send a fix request to your AI coding agent over MCP.",
+  "permissions": ["activeTab"],
+  "host_permissions": ["http://localhost/*", "http://127.0.0.1/*", "file:///*"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["http://localhost/*", "http://127.0.0.1/*", "file:///*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "action": {
+    "default_title": "Site Inspector"
+  }
+}

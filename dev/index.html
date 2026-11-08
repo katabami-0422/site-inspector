@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Site Inspector — UI harness</title>
+    <style>
+      :root {
+        --ink: #1d232b;
+        --muted: #5a6573;
+        --line: #dfe3e8;
+        --paper: #f6f7f8;
+      }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        padding: 48px clamp(20px, 6vw, 96px) 120px;
+        color: var(--ink);
+        font-family: "Hiragino Sans", "Yu Gothic UI", "Noto Sans JP", system-ui, sans-serif;
+        line-height: 1.75;
+        background: var(--paper);
+      }
+      main { max-width: 760px; }
+      h1 { margin: 0 0 16px; font-size: clamp(2rem, 5vw, 3.2rem); line-height: 1.15; letter-spacing: -0.02em; }
+      h2 { margin: 48px 0 12px; font-size: 1.35rem; }
+      p { margin: 0 0 14px; }
+      .lede { color: var(--muted); font-size: 1.05rem; }
+      .cta {
+        display: inline-flex;
+        align-items: center;
+        min-height: 44px;
+        padding: 0 22px;
+        color: white;
+        font-weight: 700;
+        background: #0e6b6b;
+        border-radius: 6px;
+        text-decoration: none;
+      }
+      .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; margin-top: 20px; }
+      .card { padding: 18px 20px; background: white; border: 1px solid var(--line); border-radius: 10px; }
+      .card h3 { margin: 0 0 6px; font-size: 1rem; }
+      .card p { margin: 0; color: var(--muted); font-size: 0.9rem; }
+      .hero { max-width: 640px; padding: 40px 0 8px; }
+      .badge { display: inline-block; margin-bottom: 18px; padding: 2px 10px; color: #0e6b6b; font-size: 0.75rem; font-weight: 700; border: 1px solid currentColor; border-radius: 999px; }
+      footer { margin-top: 72px; padding-top: 18px; color: var(--muted); font-size: 0.85rem; border-top: 1px solid var(--line); }
+    </style>
+  </head>
+  <body>
+    <main>
+      <section class="hero">
+        <span class="badge">UI harness</span>
+        <h1 class="hero-title">現場の写真を、その日のうちに共有する</h1>
+        <p class="lede">
+          撮った写真に一言添えるだけで、事務所と現場の記録がそろう。説明のための資料づくりは要りません。
+        </p>
+        <a class="cta" href="#start">はじめる</a>
+      </section>
+
+      <section>
+        <h2>現場で完結する3つの機能</h2>
+        <div class="cards">
+          <article class="card">
+            <h3>写真に注釈</h3>
+            <p>指で囲んで、気づいたことをそのまま書き残せます。</p>
+          </article>
+          <article class="card">
+            <h3>日報に自動で反映</h3>
+            <p>その日の写真とメモが、日報の下書きにまとまります。</p>
+          </article>
+          <article class="card">
+            <h3>事務所と共有</h3>
+            <p>共有リンクを送るだけ。アプリのインストールは不要です。</p>
+          </article>
+        </div>
+      </section>
+
+      <footer>このページは Site Inspector の UI 確認用です。スクリーンショットはダミー画像を返します。</footer>
+    </main>
+    <script type="module" src="/dev/main.tsx"></script>
+  </body>
+</html>
